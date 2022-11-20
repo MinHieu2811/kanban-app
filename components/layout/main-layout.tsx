@@ -2,7 +2,7 @@ import { Box, Stack } from '@mui/material';
 import { LayoutProps } from '@/models/index';
 import * as React from 'react';
 
-export default function MainLayout({ children }: LayoutProps) {
+export function MainLayout({ children }: LayoutProps) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0)
