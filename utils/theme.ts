@@ -5,10 +5,10 @@ import { red } from '@mui/material/colors';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#FF6464',
+      main: '#160438',
     },
     secondary: {
-      main: '#00A8CC',
+      main: '#0c5203',
     },
     error: {
       main: red.A400,
@@ -45,7 +45,7 @@ export const theme = createTheme({
           color: 'black',
 
           '&:hover,' : {
-            color: '#FF6464'
+            color: '#FFFFFF'
           }
         }
       }
