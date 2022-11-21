@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { TextField } from '@mui/material';
 import { ButtonBase } from '@mui/material';
 import { Helmet } from '@/component/common/helmet';
+import Loading from '@/component/common/loading';
 
 const StyledContainer = styled.div`
     height: 100vh;
@@ -22,6 +23,7 @@ const StyledLoginContainer = styled.div`
     align-items: center;
     padding: 50px;
     background-color: white;
+    border: 1px solid props.color;
     border-radius: 5px;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0, 0, 0 / 0.1);
 `
@@ -77,7 +79,7 @@ export default function LoginPage() {
         <MainLayout>
             <Helmet title='Login' />
             <StyledContainer style={{backgroundColor: `${theme.palette.primary.main}`}}>
-                <StyledLoginContainer>
+                <StyledLoginContainer color='secondary'>
                     <StyledTypography variant='h2'>Login</StyledTypography>
                     <StyledInputGroup>
                         <StyledInput color='secondary' type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -92,23 +94,6 @@ export default function LoginPage() {
                     <StyledButton variant="contained" onClick={signInGoogleHandler} sx={{backgroundColor: theme.palette.secondary.main}}>
                         Sign in with Google
                     </StyledButton>
-                    <ButtonBase
-                        LinkComponent={Button}
-                        href='/register'
-                        sx={{
-                            padding: '10px',
-                            backgroundColor: 'transparent',
-                            color: 'black',
-                            ":hover": {
-                                backgroundColor: 'transparent'
-                            },
-                            ":focus": {
-                                backgroundColor: 'transparent'
-                            },
-                        }}
-                    >
-                        Dont have an account? Sign up
-                    </ButtonBase>
                 </StyledLoginContainer>
             </StyledContainer>
         </MainLayout>
